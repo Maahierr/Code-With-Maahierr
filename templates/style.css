@@ -1,0 +1,76 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+a{
+    cursor: url("/static/point.png"), url("/static/point.cur"), default;
+  }
+.container{
+  align-content: center;
+  text-align: center;
+}
+.btn{
+    cursor: url("/static/cursor.png"), url("/static/cursor.cur"), default;
+    background: rgb();
+    border: 3px solid white;
+    padding: 8px;
+    border-radius: 10px;
+    color: white;
+    font-family: 'Patrick Hand', cursive;
+}
+
+.btn:hover{
+    background: rgb(96, 96, 255);
+    box-shadow: 5px 5px 5px rgb(96, 96, 255);
+}
+
+.aboutUs{
+    display: column;
+    background-color: rgb(228, 228, 228);
+    font-family: 'Pangolin', cursive;
+}
+.home{
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+
+.home .left{
+    padding: 10px;
+    max-width: 25%;
+    border: 3px solid black;
+    border-radius: 20px;
+}
+.home .left p{
+    margin: auto;
+}
+
+.imgbg p{
+    font-family: 'Monoton', cursive;
+}
+
+.glow{
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+      
+@-webkit-keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+    
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+        }
+}
+.btnfm{
+    background-color: rgb(44, 44, 235);
+}

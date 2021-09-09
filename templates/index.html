@@ -1,0 +1,166 @@
+{% extends 'base.html' %} {% block title %}Home{% endblock title %} {% block body %}
+<style>
+	.glow {
+		font-size: 20px;
+		color: rgb(0, 0, 0);
+		text-align: center;
+		animation: glow 1s ease-in-out infinite alternate;
+	}
+
+	@-webkit-keyframes glow {
+		from {
+			text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+		}
+
+		to {
+			text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+		}
+	}
+
+	table {
+		width: 100%;
+	}
+
+	table img {
+		width: 50%;
+	}
+</style>
+<center>
+	<div class="wlcm">
+		<h3>{% if user.is_authenticated %}
+			<p>Welcome ~{{ user.get_username }}~</p>
+			<style>
+				.wlcm {
+					align-text: center;
+					background: #CDFFC5;
+				}
+			</style>
+			{% else %}
+			<p>Welcome ~Please Login/Signup~</p>
+			<style>
+				.wlcm {
+					align-text: center;
+					background: #FF4900;
+				}
+			</style>
+			{% endif %}
+		</h3>
+	</div>
+</center>
+<style>
+	.wlcm {
+		align-text: center;
+		background: #CDFFC5;
+	}
+</style>
+<div class="container">
+	<br><br><br>
+    <div class="home" id="home">
+        <center>
+            <p class="tagline glow" style="font-family: 'Pacifico', cursive; font-size: 30px">"Code never
+                lies,<br>comments sometimes do.”<br>— Ron Jeffries</p>
+        </center>
+        <br><br><br>
+            
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+
+.about{
+  font-family: 'Rubik', sans-serif;
+  font-size: 20px;
+  padding: 20px;
+}
+
+#logoImg:hover{
+		-webkit-animation: rotation 2s infinite linear;
+}
+
+@-webkit-keyframes rotation {
+		from {
+				-webkit-transform: rotate(0deg);
+		}
+		to {
+				-webkit-transform: rotate(359deg);
+		}
+}
+</style>
+<div class="about" id="about">
+  <center>
+    <!--<img src="https://media.istockphoto.com/vectors/blue-typography-banner-vector-id1211513704?k=6&m=1211513704&s=612x612&w=0&h=FvNuCNGKpyOCMMUdgiQ-hf8n77m7iGKAFcULPPz1F-o=" title="about us" width="50%">-->
+    <h2><b>ABOUT</b></h2>
+    <br><br>
+    <b><p>This is a project based website made by Maahierr</p>
+    <p>All downloadable files are safe and doesn't include any Malware or Adware</p></b>
+    <br><br>
+    <h3>Software and Languages from which I am familiar with :</h3></center>
+    <br>
+    <ul>
+      <li>Unity Game Engine</li>
+      <li>Unreal Game Engine</li>
+      <li>Python</li>
+      <li>Scratch</li>
+      <li>MIT App InventerInventor</li>
+      <li>HTML</li>
+      <li>CSS</li>
+    </ul>
+</div>
+<br><br><br>
+<style>
+	.btn {
+		cursor: url("/static/point.png"), url("/static/point.cur"), default;
+		background: rgb(81, 177, 255);
+		border: 3px solid white;
+		width: 100px;
+		padding: 8px;
+		border-radius: 10px;
+		color: white;
+		font-family: 'Patrick Hand', cursive;
+	}
+
+	.btn:hover {
+		background: rgb(96, 96, 255);
+		box-shadow: 5px 5px 5px rgb(96, 96, 255);
+		a {
+			cursor: url("/static/point.png"), url("/static/point.cur"), default;
+		}
+  .contact{
+    padding: 20px;
+  }
+</style>
+<div class="container mb-3 py-4 contact" id="contact">
+	<h2 class="text-center">Contact Us</h2>
+	<form method="post" action="/contact">
+		{% csrf_token %}
+		<div class="form-group">
+			<label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your Name">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email">
+        </div>
+        
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter Your Phone Number">
+        </div>      
+        
+        <div class="form-group">
+            <label for="desc">Description</label>
+            <textarea class="form-control" id="desc" rows="3" name="desc" placeholder="Description"></textarea>
+        </div>
+        <br>
+        <a><button class="btn" type="submit">Submit</button></a>
+    </form>
+
+</div>
+<br><br><br>
+<center>
+    <a href=""><img src="https://img.icons8.com/material-outlined/24/000000/instagram-new--v2.png" id="logoImg"></a>&nbsp;&nbsp;<a href=""><img src="https://img.icons8.com/ios-glyphs/30/000000/twitter--v2.png" id="logoImg"></a>&nbsp;&nbsp;<a href=""><img src="https://img.icons8.com/ios-glyphs/30/000000/facebook-circled--v2.png" id="logoImg"></a>
+    </center>
+            <br><br><br><br><br><br>
+    </div>
+</div>
+<br><br><br><br>
+{% endblock body %}

@@ -1,0 +1,56 @@
+{% extends 'base.html' %} {% block title %}Contact Us{% endblock title %}
+<style>
+	.btn {
+		cursor: url("/static/point.png"), url("/static/point.cur"), default;
+		background: rgb(81, 177, 255);
+		border: 3px solid white;
+		width: 100px;
+		padding: 8px;
+		border-radius: 10px;
+		color: white;
+		font-family: 'Patrick Hand', cursive;
+	}
+
+	.btn:hover {
+		background: rgb(96, 96, 255);
+		box-shadow: 5px 5px 5px rgb(96, 96, 255);
+		a {
+			cursor: url("/static/point.png"), url("/static/point.cur"), default;
+		}
+</style>
+{% block body %}
+<div class="wlcm">
+	<center>
+		YOUR RESPONSE HAS BEEN RECORDED, THE ADMIN WILL CONTACT YOU SOON
+	</center>
+</div>
+<div class="container mb-3 py-4" id="contact">
+	<h1 class="text-center">Contact Us</h1>
+	<form method="post" action="/contact">
+		{% csrf_token %}
+		<div class="form-group">
+			<label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your Name">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email">
+        </div>
+        
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter Your Phone Number">
+        </div>      
+        
+        <div class="form-group">
+            <label for="desc">Description</label>
+            <textarea class="form-control" id="desc" rows="3" name="desc" placeholder="Description"></textarea>
+        </div>
+        <br>
+        <a><button class="btn" type="submit">Submit</button></a>
+    </form>
+
+</div>
+
+{% endblock body %}
